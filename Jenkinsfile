@@ -2,11 +2,6 @@ pipeline {
 	agent any
 
 	stages {
-		stage('echo') {
-			steps {
-				echo scm
-			}
-		}
 		stage('checkout') {
 			steps {
 				checkout scm

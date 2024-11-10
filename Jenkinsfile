@@ -10,8 +10,8 @@ pipeline {
 		stage('build') {
 			steps {
 				script {
-					bat "dotnet restore ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest.csproj"
-					bat "dotnet build ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest.csproj --configuration Release"
+					bat "dotnet restore ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest\\PipelineForBuildTest.csproj"
+					bat "dotnet build ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest\\PipelineForBuildTest.csproj --configuration Release"
 				}
 			}
 		}

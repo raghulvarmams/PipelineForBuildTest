@@ -18,7 +18,7 @@ pipeline {
 		stage('test') {
 			steps {
 				script {
-					bat "dotnet test --no-restore --configuration Release"
+					bat "dotnet test ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest.csproj --no-restore --configuration Release"
 				}
 			}
 		}

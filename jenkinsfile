@@ -2,6 +2,9 @@ pipeline {
 	agent any
 
 	stages {
+		stage('echo') {
+			echo scm
+		}
 		stage('checkout') {
 			steps {
 				checkout scm
@@ -10,8 +13,8 @@ pipeline {
 		stage('build') {
 			steps {
 				script {
-					bat "dotnet restore ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest.csproj"
-					bat "dotnet build ${workspace}\\PipelineForBuildTest\\\\PipelineForBuildTest\\PipelineForBuildTest.csproj --configuration Release"
+					bat "dotnet restore ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest\\PipelineForBuildTest.csproj"
+					bat "dotnet build ${workspace}\\PipelineForBuildTest\\PipelineForBuildTest\\PipelineForBuildTest.csproj --configuration Release"
 				}
 			}
 		}
